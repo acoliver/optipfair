@@ -11,6 +11,12 @@ include = '\.pyi?$'
 profile = "black"
 line_length = 100
 
+[tool.pytest.ini_options]
+# Only collect the unit tests. The repo also has example scripts named *_test.py
+# (completebias_test.py, docs/examples/simplebias_test.py) that load gated models
+# and open plot windows when imported.
+testpaths = ["tests"]
+
 [tool.mypy]
 python_version = "3.8"
 warn_return_any = true
